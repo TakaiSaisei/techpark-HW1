@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
-    private final List<Integer> mData;
-    private final FragmentActivity activity;
+    private List<Integer> mData;
+    private FragmentActivity activity;
 
     public RecycleViewAdapter(List<Integer> data, FragmentActivity mActivity) {
         mData = data;
