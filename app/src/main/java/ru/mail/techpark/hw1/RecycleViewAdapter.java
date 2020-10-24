@@ -62,7 +62,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mNumber;
+        public TextView mNumber;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
