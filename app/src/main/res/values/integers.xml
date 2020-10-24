@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="portrait_col">3</integer>
+    <integer name="landscape_col">4</integer>
+    <integer name="add_on_start">100</integer>
+</resources>
