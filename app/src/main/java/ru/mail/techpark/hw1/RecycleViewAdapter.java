@@ -47,7 +47,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
                     .addToBackStack(null)
-                    .commitAllowingStateLoss();
+                    .commit();
         });
     }
 
