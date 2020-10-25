@@ -18,21 +18,21 @@ import java.util.List;
 
 public class MainFragment extends Fragment {
     private static final String SIZE = "size";
-    private List<Integer> numbers;
-    private RecycleViewAdapter adapter;
-    private int cntNum = 100;
+    private List<Integer> mNumbers;
+    private RecycleViewAdapter mAdapter;
+    private int mCntNum = 100;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
-            cntNum = savedInstanceState.getInt(SIZE);
+            mCntNum = savedInstanceState.getInt(SIZE);
         }
-        numbers = new ArrayList<>();
-        for (int i = 1; i <= cntNum; i++) {
-            numbers.add(i);
+        mNumbers = new ArrayList<>();
+        for (int i = 1; i <= mCntNum; i++) {
+            mNumbers.add(i);
         }
-        adapter = new RecycleViewAdapter(numbers, getActivity());
+        mAdapter = new RecycleViewAdapter(mNumbers, getActivity());
 
     }
 
@@ -51,23 +51,23 @@ public class MainFragment extends Fragment {
         } else colNum = getResources().getInteger(R.integer.landscape_col);
 
         recyclerView.setLayoutManager(new GridLayoutManager(inflater.getContext(), colNum));
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(mAdapter);
 
         Button button = view.findViewById(R.id.add_button);
-        button.setOnClickListener(v -> adapter.addData(numbers.size() + 1));
+        button.setOnClickListener(v -> mAdapter.addData(mNumbers.size() + 1));
         return view;
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(SIZE, numbers.size());
+        outState.putInt(SIZE, mNumbers.size());
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        adapter = null;
-        numbers = null;
+        mAdapter = null;
+        mNumbers = null;
     }
 }

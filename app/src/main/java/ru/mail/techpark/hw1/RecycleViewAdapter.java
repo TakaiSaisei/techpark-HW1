@@ -15,11 +15,11 @@ import java.util.List;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
     private List<Integer> mData;
-    private FragmentActivity activity;
+    private FragmentActivity mActivity;
 
-    public RecycleViewAdapter(List<Integer> data, FragmentActivity mActivity) {
+    public RecycleViewAdapter(List<Integer> data, FragmentActivity activity) {
         mData = data;
-        activity = mActivity;
+        mActivity = activity;
     }
 
     @NonNull
@@ -43,7 +43,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             bundle.putInt("arg", Integer.parseInt(holder.mNumber.getText().toString()));
             NumberFragment fragment = new NumberFragment();
             fragment.setArguments(bundle);
-            activity.getSupportFragmentManager()
+            mActivity.getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
                     .addToBackStack(null)
