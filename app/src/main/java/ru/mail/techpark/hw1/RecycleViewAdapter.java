@@ -15,6 +15,7 @@ import java.util.List;
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
     private List<Integer> mData;
     private FragmentActivity mActivity;
+    public static final String BUNDLE_KEY = "arg";
 
     public RecycleViewAdapter(List<Integer> data, FragmentActivity activity) {
         mData = data;
@@ -39,7 +40,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         holder.mNumber.setText(String.valueOf(num));
         holder.itemView.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            bundle.putInt("arg", Integer.parseInt(holder.mNumber.getText().toString()));
+            bundle.putInt(BUNDLE_KEY, Integer.parseInt(holder.mNumber.getText().toString()));
             NumberFragment fragment = new NumberFragment();
             fragment.setArguments(bundle);
             mActivity.getSupportFragmentManager()

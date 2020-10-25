@@ -24,7 +24,7 @@ public class NumberFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Bundle arg = getArguments();
-        int num = arg.getInt("arg");
+        int num = arg.getInt(RecycleViewAdapter.BUNDLE_KEY);
         TextView textView = getActivity().findViewById(R.id.fragment_number);
         textView.setText(String.valueOf(num));
         if (num % 2 == 0)
