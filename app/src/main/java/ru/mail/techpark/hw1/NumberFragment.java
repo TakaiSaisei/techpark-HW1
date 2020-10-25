@@ -1,6 +1,5 @@
 package ru.mail.techpark.hw1;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,8 +28,8 @@ public class NumberFragment extends Fragment {
         TextView textView = getActivity().findViewById(R.id.fragment_number);
         textView.setText(String.valueOf(num));
         if (num % 2 == 0)
-            textView.setTextColor(Color.RED);
+            textView.setTextColor(getResources().getColor(R.color.red));
         else
-            textView.setTextColor(Color.BLUE);
+            textView.setTextColor(getResources().getColor(R.color.blue));
     }
 }

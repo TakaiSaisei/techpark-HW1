@@ -1,6 +1,5 @@
 package ru.mail.techpark.hw1;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,9 +32,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         int num = mData.get(position);
         if (num % 2 == 0) {
-            holder.mNumber.setTextColor(Color.RED);
+            holder.mNumber.setTextColor(mActivity.getResources().getColor(R.color.red));
         } else {
-            holder.mNumber.setTextColor(Color.BLUE);
+            holder.mNumber.setTextColor(mActivity.getResources().getColor(R.color.blue));
         }
         holder.mNumber.setText(String.valueOf(num));
         holder.itemView.setOnClickListener(v -> {
